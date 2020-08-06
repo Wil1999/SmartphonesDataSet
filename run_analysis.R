@@ -48,3 +48,6 @@ DCleaned <- cbind(sub,YPart,XPart)
 DCleaned <- data.table::data.table(DCleaned)
 ##    Hallamos los promedios respectivos
 DTidy <- DCleaned[,lapply(.SD,mean),by ='Sub_ID,Activity']
+
+##  We created "DTidy.txt"
+write.table(DTidy,"Dtidy.txt",row.names = FALSE)
